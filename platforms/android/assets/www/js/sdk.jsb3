@@ -1,0 +1,103 @@
+{    "projectName": "Peam JS 1 SDK",
+    "licenseText": "n",
+    "packages": [
+        {
+            "name": "jquery",
+            "target": "jquery.js",
+            "id": "jquery",
+            "files": [
+                {
+                    "path": "",
+                    "name": "jquery.min.js"
+                }
+  
+            ]
+        },
+        {
+            "name": "jquery.mobile",
+            "target": "jquery.mobile.js",
+            "id": "jquery.mobile",
+            "files": [
+                {
+                    "path": "",
+                    "name": "jquery.mobile.js"
+                } 
+            ]
+        },        {
+            "name": "qunit",
+            "target": "qunit.js",
+            "id": "qunit",
+            "files": [
+                {
+                    "path": "",
+                    "name": "qunit.js"
+                } 
+            ]
+        },        {
+            "name": "databind",
+            "target": "databind.js",
+            "id": "databind",
+            "files": [
+                {
+                    "path": "",
+                    "name": "databind.js"
+                } 
+            ]
+        },        {
+            "name": "face",
+            "target": "face.js",
+            "id": "face",
+            "files": [
+                {
+                    "path": "",
+                    "name": "utils.js"
+                } , {
+                    "path": "",
+                    "name": "BaseUI.js"
+                }  , {
+                    "path": "../bill/",
+                    "name": "BaseBill.js" }, 
+                   {
+                    "path": "../rpt/",
+                    "name": "BaseRpt.js"
+                } 
+            ]
+        },
+        {
+            "name": "jquery.jqGrid",
+            "target": "jquery.jgGrid.js",
+            "id": "jqGrid",
+            "files": [
+                {
+                    "path": "",
+                    "name": "jquery.jqGrid.js"
+                }
+            ]
+        },
+        {
+            "name": "jquery.ztree",
+            "target": "jquery.ztree.all.js",
+            "id": "jquery.ztree",
+            "files": [
+                {
+                    "path": "",
+                    "name": "jquery.ztree.all.js"
+                }
+            ]
+        }
+    ],
+       "builds": [
+        {
+            "name": "All",
+            "target": "Peam-All.js",
+           
+            "packages": [
+                "jquery",
+                "bootstrap",
+                "jquery.jqGrid",
+                "qunit",
+                "databind",
+                  "face"
+            ]
+        }]
+}

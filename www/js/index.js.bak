@@ -1,0 +1,64 @@
+
+
+(function() {
+	var sup = MBaseUI;
+	sys_loginframe = $.extend({}, sup, {
+
+				initEvent : function() {
+
+					this.on('#btnLogin', this.btnLogin_click);
+					this.on('#btnCancel', this.btnCancel_click);
+				},
+			
+				// 输入信息验证
+				valid : function() {
+					$.serverIp = $("#serverIp").attr("value");
+					if ($("#username").attr("value") == ''
+							|| $("#password").attr("value") == '') {
+						alert('用户名或密码不能为空！');
+						// $.mobile.changePage("content/loginfalse.html","slidedown",
+						// true, true);
+						return false;
+					}
+					return true;
+				},
+				login_callback:function(msg){
+					
+										$(msg).find('authUserResponse').each(
+												function(i) {
+													var login = $(this)
+															.children('return')
+															.text();
+													alert(login);
+												})
+
+										if (msg == 'success') {
+											$.mobile.changePage(
+													"content/first.html",
+													"slidedown", true, true);
+										} else {
+											$.mobile.changePage(
+													"content/loginfalse.html",
+													"slidedown", true, true);
+										}
+
+									
+				},
+				btnLogin_click : function() {
+
+					if (this.valid()) {
+						var name = $("#username").attr("value");
+						var passwd = $("#password").attr("value");
+						var d ={name: name, passwd:passwd}
+						this.rpc('login', d, this.login_callback)
+					}
+				},
+				btnCancel_click : function() {
+					console.info(3333333333);
+				},
+				onLoad : function() {
+					sup.onLoad.call(this);
+
+				}
+			})
+})();
